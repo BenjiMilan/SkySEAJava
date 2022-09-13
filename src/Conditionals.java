@@ -2,6 +2,7 @@ import java.util.*;
 public class Conditionals {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        //If statement
         /*
         int int1, int2;
         System.out.println("Enter 2 separate numbers:");
@@ -34,7 +35,8 @@ public class Conditionals {
         }
         */
 
-        int month = 0;
+        //Switch statements
+        /*int month = 0;
         System.out.println("Enter the number of a month between 1 and 12:");
         while(month < 1 || month > 12) {
             month = scanner.nextInt();
@@ -62,7 +64,42 @@ public class Conditionals {
                 System.out.println("Autumn");
                 break;
         }
+        */
 
+        //Calculator
+        String plusOrMinus = "zero";
+        double result = 0;
+        System.out.println("Enter two numbers:");
+        double num1 = scanner.nextDouble();
+        double num2 = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Enter which operation you would like (+, -, *, / or %):");
+
+        while(!plusOrMinus.equals("+")  && !plusOrMinus.equals("-") && !plusOrMinus.equals("*") && !plusOrMinus.equals("/") && !plusOrMinus.equals("%")) {
+            plusOrMinus = scanner.nextLine();
+            if(!plusOrMinus.equals("+")  && !plusOrMinus.equals("-") && !plusOrMinus.equals("*") && !plusOrMinus.equals("/") && !plusOrMinus.equals("%")) {
+                System.out.println("Incorrect input, please try again:");
+            }
+        }
+
+        switch(plusOrMinus) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                result = num1 / num2;
+                break;
+            case "%":
+                result = num1 % num2;
+                break;
+        }
+        System.out.println(num1 + " " + plusOrMinus + " " + num2 + " = " + result);
 
     }
 }
