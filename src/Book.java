@@ -39,6 +39,11 @@ public class Book {
 
     public static void main(String[] args) {
         Book book = new Book("Dune", "Frank Herbert", 10.99);
-        System.out.println(book.toString());
+        Book bookie = new Book("Wuthering Heights", "Emily Bronte", 6.99);
+        Book crazyBook = new Book("Lord of the Rings", "JRR Tolkien", 17.99);
+        Book[] books = {book, bookie, crazyBook};
+        for(Book book1: books) {
+            System.out.println(book1.toString());
+        }
     }
 }
